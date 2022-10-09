@@ -48,8 +48,9 @@ class _MyHomePageState extends State<MyHomePage> {
         body: StreamBuilder(
           stream: cubitState.stream,
           builder: (context, snapshot) {
-            final button =
-                ElevatedButton(onPressed: () {}, child: Text('Clicked Me'));
+            final button = ElevatedButton(
+                onPressed: () => cubitState.changeState(),
+                child: Text('Clicked Me'));
 
             switch (snapshot.connectionState) {
               case ConnectionState.none:
